@@ -69,6 +69,11 @@ symbol = ""
 style = "bg:red"
 format = '[[ $symbol( $version) ](fg:text bg:red)]($style)'
 
+[c]
+symbol = ""
+style = "bg:red"
+format = '[[ $symbol( $version) ](fg:text bg:red)]($style)'
+
 [rust]
 symbol = ""
 style = "bg:red"

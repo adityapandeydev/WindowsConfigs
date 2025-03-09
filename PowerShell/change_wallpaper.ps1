@@ -1,10 +1,35 @@
 $wallpaperFolder = "D:\Aditya\Wallpapers"
-$wallpapers = Get-ChildItem -Path "$wallpaperFolder\*" -File | Where-Object { $_.Extension -match "jpg|jpeg|png|webp" } | Get-Random
-$currentWallpaper = Get-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name WallPaper
-$nextWallpaper = $wallpapers | Where-Object { $_.FullName -ne $currentWallpaper.WallPaper } | Select-Object -First 1
+$lastWallpaperFile = "$wallpaperFolder\lastWallpaper.txt"
 
-If ($nextWallpaper) {
+# Get all wallpapers sorted numerically
+$wallpapers = Get-ChildItem -Path "$wallpaperFolder\*" -File | 
+    Where-Object { $_.Extension -match "jpg|jpeg|png|webp" } | 
+    Sort-Object { [int]($_.BaseName) }  # Sort based on numerical order
+
+# Read the last used wallpaper number
+if (Test-Path $lastWallpaperFile) {
+    $lastUsed = Get-Content $lastWallpaperFile
+    $lastUsed = [int]$lastUsed
+} else {
+    $lastUsed = 0  # Start from the first wallpaper if no history exists
+}
+
+# Find the next wallpaper
+$nextWallpaper = $wallpapers | Where-Object { [int]($_.BaseName) -gt $lastUsed } | Select-Object -First 1
+
+# If no next wallpaper is found, start from the first one
+if (-not $nextWallpaper) {
+    $nextWallpaper = $wallpapers | Select-Object -First 1
+}
+
+if ($nextWallpaper) {
     $path = $nextWallpaper.FullName
+
+    # Save the current wallpaper number for next run
+    $nextNumber = [int]$nextWallpaper.BaseName
+    Set-Content -Path $lastWallpaperFile -Value $nextNumber
+
+    # C# Interop for setting wallpaper
     Add-Type -TypeDefinition @"
     using System;
     using System.Runtime.InteropServices;
@@ -17,6 +42,7 @@ If ($nextWallpaper) {
     }
 "@ -Language CSharp
 
+    # Set the new wallpaper
     [Wallpaper]::SetWallpaper($path)
 }
 

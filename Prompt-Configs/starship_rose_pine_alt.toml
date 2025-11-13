@@ -1,0 +1,243 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "rose_pine"
+
+format = """
+[](love)\
+$os\
+$username\
+[](bg:gold fg:love)\
+$directory\
+[](bg:pine fg:gold)\
+$git_branch\
+$git_status\
+[](fg:pine bg:iris)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\  
+$kotlin\
+$haskell\
+$python\
+$dart\
+$dotnet\
+$deno\
+$cmake\
+$gleam\
+$erlang\
+$elixir\
+$gradle\
+$zig\
+$nix_shell\
+[](fg:iris bg:foam)\
+$docker_context\
+$conda\
+[](fg:foam bg:rose)\
+$time\
+[ ](fg:rose)\
+$line_break$character"""
+
+[os]
+disabled = false
+style = "bg:love fg:overlay"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:love fg:overlay"
+style_root = "bg:love fg:overlay"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:base bg:gold"
+format = "[ $path ]($style)"
+truncation_length = 1
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:pine"
+format = '[[ $symbol $branch ](fg:base bg:pine)]($style)'
+
+[git_status]
+disabled = false
+style = "bg:pine fg:base"
+format = '[[($all_status$ahead_behind )](fg:base bg:pine)]($style)'
+up_to_date = '[ ✓](bg:pine fg:base)'
+untracked = '[?($count)](bg:pine fg:base)'
+stashed = '[$](bg:pine fg:base)'
+modified = '[!($count)](bg:pine fg:base)'
+renamed = '[»($count)](bg:pine fg:base)'
+deleted = '[✘($count)](bg:pine fg:base)'
+staged = '[++($count)](bg:pine fg:base)'
+ahead = '[⇡($count)](bg:pine fg:base)'
+diverged = '⇕[(bg:pine fg:base)[⇡($ahead_count)](bg:pine fg:base)[⇣($behind_count)](bg:pine fg:base)](bg:pine fg:base)'
+behind = '[⇣($count)](bg:pine fg:base)'
+
+[nodejs]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[c]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[php]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[java]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[python]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[dart]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[dotnet]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[deno]
+symbol = "🦕"
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[cmake]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[gleam]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[erlang]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[elixir]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[gradle]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[zig]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[nix_shell]
+symbol = ""
+style = "bg:iris"
+format = '[[ $symbol( $version) ](fg:base bg:iris)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:foam"
+format = '[[ $symbol( $context) ](fg:base bg:foam)]($style)'
+
+[conda]
+symbol = " "
+style = "bg:foam"
+format = '[[ $symbol( $environment) ](fg:base bg:foam)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:rose"
+format = '[[  $time ](fg:base bg:rose)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[[➜](bold fg:green) ❯](gold)'
+error_symbol = '[[➜](bold fg:red) ❯](gold)'
+vimcmd_symbol = '[](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:red)'
+vimcmd_replace_symbol = '[](bold fg:red)'
+vimcmd_visual_symbol = '[](bold fg:gold)'
+
+[palettes.rose_pine]
+base = "#191724"
+surface = "#1f1d2e"
+overlay = "#26233a"
+muted = "#6e6a86"
+subtle = "#908caa"
+text = "#e0def4"
+love = "#eb6f92"
+gold = "#f6c177"
+rose = "#ebbcba"
+pine = "#31748f"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+highlight_low = "#21202e"
+highlight_med = "#403d52"
+highlight_high = "#524f67"

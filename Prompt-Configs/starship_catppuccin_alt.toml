@@ -1,0 +1,276 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "catppuccin_mocha"
+
+format = """
+$username\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+$conda\
+$python\
+$time\n  \
+[󱞪](fg:lavender) \
+"""
+
+# ─────────────────────────────
+# Core Segments
+# ─────────────────────────────
+
+[directory]
+format = "[](fg:surface0)[ $path ]($style)[](fg:surface0) "
+style = "bg:surface0 fg:teal"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
+
+[fill]
+style = "fg:surface0"
+symbol = " "
+
+[git_branch]
+format = "[](fg:surface0)[ $symbol $branch ]($style)[](fg:surface0) "
+style = "bg:surface0 fg:blue"
+symbol = ""
+
+[git_status]
+disabled = false
+style = "bg:surface0 fg:red"
+format = '[](fg:surface0)([$all_status$ahead_behind]($style))[](fg:surface0) '
+up_to_date = '[ ✓ ](bg:surface0 fg:green)'
+untracked = '[?\($count\)](bg:surface0 fg:yellow)'
+stashed = '[\$](bg:surface0 fg:blue)'
+modified = '[!\($count\)](bg:surface0 fg:peach)'
+renamed = '[»\($count\)](bg:surface0 fg:sky)'
+deleted = '[✘\($count\)](bg:surface0 fg:red)'
+staged = '[++\($count\)](bg:surface0 fg:green)'
+ahead = '[⇡\(${count}\)](bg:surface0 fg:teal)'
+diverged = '⇕[\[](bg:surface0 fg:lavender)[⇡\(${ahead_count}\)](bg:surface0 fg:green)[⇣\(${behind_count}\)](bg:surface0 fg:red)[\]](bg:surface0 fg:lavender)'
+behind = '[⇣\(${count}\)](bg:surface0 fg:red)'
+
+[time]
+disabled = false
+format = " [](fg:surface0)[ $time 󰴈 ]($style)[](fg:surface0)"
+style = "bg:surface0 fg:pink"
+time_format = "%I:%M%P"
+use_12hr = true
+
+[username]
+disabled = false
+format = "[](fg:surface0)[ 󰧱 $user ]($style)[](fg:surface0) "
+show_always = true
+style_root = "bg:surface0 fg:lavender"
+style_user = "bg:surface0 fg:lavender"
+
+# ─────────────────────────────
+# Languages
+# ─────────────────────────────
+
+[c]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[elixir]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[elm]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[golang]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[haskell]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[java]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[julia]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[nodejs]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = "󰎙 "
+
+[nim]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = "󰆥 "
+
+[rust]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[scala]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[python]
+style = "bg:surface0 fg:teal"
+format = " [](fg:surface0)[ $symbol$version ]($style)[](fg:surface0)"
+disabled = false
+symbol = " "
+
+[conda]
+style = "bg:surface0 fg:green"
+format = " [](fg:surface0)[ $symbol$environment ]($style)[](fg:surface0)"
+disabled = false
+symbol = "🅒 "
+
+# ─────────────────────────────
+# Palettes
+# ─────────────────────────────
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
+
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"

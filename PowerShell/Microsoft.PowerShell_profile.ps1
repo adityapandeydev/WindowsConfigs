@@ -11,7 +11,7 @@ Set-Alias c clear
 # Function for multi-word commands
 function gs { git status }
 function ga { git add . }
-function gp { git push }
+function gu { git push }
 function gca { git commit -m "$args" }
 function gsca {git commit -S -m "$args"}
 function lst { lsd --tree }

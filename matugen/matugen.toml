@@ -1,0 +1,7 @@
+[config.wallpaper]
+# We don't want Matugen to change the wallpaper, just generate colors
+command = "echo"
+
+[templates.starship]
+input_path = "C:/Users/AdityaPandey/Documents/Configs/matugen/starship.toml.j2"
+output_path = "C:/Users/AdityaPandey/Documents/Configs/Prompt-Configs/starship_matugen.toml"

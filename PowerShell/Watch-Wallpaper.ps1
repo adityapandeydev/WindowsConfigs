@@ -7,8 +7,8 @@ $matugenConfig = "C:\Users\AdityaPandey\Documents\Configs\matugen\matugen.toml"
 function Update-Theme {
     $path = Join-Path $wallpaperDir $wallpaperFile
     if (Test-Path $path) {
-        # Generate new starship config based on current wallpaper
-        matugen image $path -c $matugenConfig
+        # Generate new starship config based on current wallpaper without prompting
+        matugen image $path -c $matugenConfig --source-color-index 0
     }
 }
 
@@ -27,8 +27,8 @@ $action = {
     Update-Theme
 }
 
-Register-ObjectEvent $watcher "Changed" -Action $action
-Register-ObjectEvent $watcher "Created" -Action $action
+Register-ObjectEvent $watcher "Changed" -Action $action | Out-Null
+Register-ObjectEvent $watcher "Created" -Action $action | Out-Null
 
 Write-Host "Watching for wallpaper changes in $wallpaperDir..."
 

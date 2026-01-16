@@ -1,4 +1,3 @@
-$env:STARSHIP_CONFIG = 'C:\Users\AdityaPandey\Documents\Configs\Prompt-Configs\starship_matugen.toml'
 Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 

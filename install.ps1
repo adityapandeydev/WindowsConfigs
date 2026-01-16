@@ -18,4 +18,13 @@ if (Test-Path $psProfileDest) {
 }
 New-Item -ItemType SymbolicLink -Path $psProfileDest -Target $psProfileSrc | Out-Null
 
+# Create Startup Shortcut for Matugen Watcher
+$startupFolder = [Environment]::GetFolderPath('Startup')
+$shortcutPath = Join-Path $startupFolder "MatugenWatcher.lnk"
+$wshShell = New-Object -ComObject WScript.Shell
+$shortcut = $wshShell.CreateShortcut($shortcutPath)
+$shortcut.TargetPath = Join-Path $repoPath "matugen\Start-Watcher.vbs"
+$shortcut.WorkingDirectory = Join-Path $repoPath "matugen"
+$shortcut.Save()
+
 Write-Host "Done!"

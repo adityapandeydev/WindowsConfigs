@@ -1,0 +1,8 @@
+# Winget Packages
+ajeetdsouza.zoxide
+junegunn.fzf
+lsd-rs.lsd
+Schniz.fnm
+Neovim.Neovim
+starship.starship
+fastfetch-cli.fastfetch

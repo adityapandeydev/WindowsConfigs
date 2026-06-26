@@ -3,6 +3,7 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 Import-Module -Name Terminal-Icons
 
+Import-Module PSReadLine
 # aliases
 Set-Alias g git
 Remove-Item Alias:ls -Force

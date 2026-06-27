@@ -4,6 +4,8 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 Import-Module -Name Terminal-Icons
 
 Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+
 # aliases
 Set-Alias g git
 Remove-Item Alias:ls -Force

@@ -6,6 +6,7 @@ Import-Module -Name Terminal-Icons
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView # Or InlineView
+Set-PSReadLineOption -EditMode Windows
 
 # aliases
 Set-Alias g git

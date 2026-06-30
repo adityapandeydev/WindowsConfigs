@@ -8,6 +8,8 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView # Or InlineView
 Set-PSReadLineOption -EditMode Windows
 
+Import-Module PSFzf; Set-PsFzfOption -EnableAltC
+
 # aliases
 Set-Alias g git
 Remove-Item Alias:ls -Force

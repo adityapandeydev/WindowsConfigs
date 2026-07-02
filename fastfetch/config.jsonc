@@ -3,7 +3,7 @@
 
   "logo": {
     "type": "file",
-    "source": "%FASTFETCH_EAGLE_ROOT%/eagle-logo.txt",
+    "source": "C:/Users/AdityaPandey/Documents/Configs/fastfetch/fastfetch-f14/f14-logo.txt",
     "color": {
       "1": "#5EAAA8",
       "2": "#68B7B2",

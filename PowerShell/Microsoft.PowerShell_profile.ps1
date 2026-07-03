@@ -15,6 +15,7 @@ Set-Alias g git
 Remove-Item Alias:ls -Force
 Set-Alias ls lsd
 Set-Alias c clear
+Set-Alias ff fastfetch
 
 # Function for multi-word commands
 function gs { git status }

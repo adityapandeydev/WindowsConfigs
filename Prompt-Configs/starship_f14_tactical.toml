@@ -1,0 +1,124 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# F-14 Tactical Starship Configuration
+# Inspired by the Fastfetch config, using its pastel/tactical color palette.
+
+add_newline = true
+command_timeout = 1500
+
+format = """
+[┌─\\[](fg:#525A6B)\
+$os\
+[F-14](bold fg:#9BE5D8)\
+[\\]──](fg:#525A6B)\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$dotnet\
+$java\
+$nodejs\
+$python\
+$rust\
+$golang\
+\n[└─>](fg:#525A6B)\
+$character"""
+
+right_format = """$cmd_duration $time"""
+
+[palettes.f14_tactical]
+cyan = "#9BE5D8"
+green = "#8BD49C"
+yellow = "#E7C787"
+red = "#E58C9B"
+blue = "#7DA6D8"
+gray = "#525A6B"
+light_gray = "#D8DEE9"
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "bold fg:#7DA6D8"
+
+[os.symbols]
+Windows = "󰍲 "
+Linux = " "
+Macos = " "
+
+[directory]
+style = "bold fg:#9BE5D8"
+format = "[$path]($style) "
+truncation_length = 4
+truncation_symbol = "…/"
+read_only = " "
+read_only_style = "bold fg:#E58C9B"
+
+[git_branch]
+symbol = ""
+style = "bold fg:#7DA6D8"
+format = "[ $symbol $branch]($style)"
+
+[git_status]
+style = "bold fg:#E7C787"
+format = '([ $all_status$ahead_behind]($style))'
+ahead = "⇡${count}"
+behind = "⇣${count}"
+deleted = ""
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = "🏳"
+up_to_date = " "
+untracked = " "
+stashed = " "
+modified = " "
+staged = '[++\($count\)](fg:#8BD49C)'
+renamed = "襁 "
+
+[cmd_duration]
+min_time = 500
+format = "[[ 祥 $duration ]](fg:#525A6B)"
+
+[time]
+disabled = false
+format = "[[  $time ]](fg:#525A6B)"
+time_format = "%T"
+
+[character]
+success_symbol = "[ ❯](bold fg:#8BD49C)"
+error_symbol = "[ ❯](bold fg:#E58C9B)"
+vimcmd_symbol = "[ ❮](bold fg:#E7C787)"
+
+# Language Symbols
+[c]
+symbol = " "
+style = "bold fg:#7DA6D8"
+format = "[ $symbol($version)]($style)"
+
+[dotnet]
+symbol = " "
+style = "bold fg:#7DA6D8"
+format = "[ $symbol($version)]($style)"
+
+[java]
+symbol = " "
+style = "bold fg:#E7C787"
+format = "[ $symbol($version)]($style)"
+
+[nodejs]
+symbol = " "
+style = "bold fg:#8BD49C"
+format = "[ $symbol($version)]($style)"
+
+[python]
+symbol = " "
+style = "bold fg:#E7C787"
+format = "[ $symbol($version)]($style)"
+
+[rust]
+symbol = " "
+style = "bold fg:#E58C9B"
+format = "[ $symbol($version)]($style)"
+
+[golang]
+symbol = " "
+style = "bold fg:#9BE5D8"
+format = "[ $symbol($version)]($style)"

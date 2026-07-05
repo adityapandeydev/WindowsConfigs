@@ -1,0 +1,13 @@
+{
+    "profiles": {
+        "defaults": {
+            "font": {
+                "face": "FiraCode Nerd Font",
+                "size": 11
+            },
+            "colorScheme": "Catppuccin Macchiato",
+            "opacity": 90,
+            "useAcrylic": true
+        }
+    }
+}

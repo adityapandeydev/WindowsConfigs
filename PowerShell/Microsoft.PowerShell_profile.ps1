@@ -18,13 +18,20 @@ Set-Alias c clear
 Set-Alias ff fastfetch
 
 # Source functions
-. $PSScriptRoot\functions.ps1
+function gs { git status }
+function ga { git add . }
+function gpu { git push }
+function gca { git commit -m "$args" }
+function gsca {git commit -S -m "$args"}
+function lst { lsd --tree }
+function q { exit }
+function .. { cd .. }
 
 fnm env --use-on-cd | Out-String | Invoke-Expression
 
 # Fastfetch startup
-$fastfetchConfig = 'C:\Users\AdityaPandey\Documents\Configs\fastfetch\config.jsonc'
+# $fastfetchConfig = 'C:\Users\AdityaPandey\Documents\Configs\fastfetch\config.jsonc'
 
-if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
-    fastfetch --config $fastfetchConfig
-}
+# if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
+#     fastfetch --config $fastfetchConfig
+# }
